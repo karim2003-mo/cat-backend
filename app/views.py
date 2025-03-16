@@ -1,20 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse , JsonResponse
-
-from .models import Design
+from .models import *
+from .serializers import ProductSerializer
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 # Create your views here.
 def test(request):
     return HttpResponse("Hello World")
-def alldesigns(request):
-    designs = Design.objects.all()
-    d=[]
-    for design in designs:
-        d.append({
-            "designername":design.designername,
-            "designerexp":design.designerexp,
-            "designtype":design.designtype,
-            "designrate":design.designrate,
-            "designsubrate":design.designsubrate,
-            "designimages":design.designimages
-        })
-    return JsonResponse({"designs":d})
+@api_view(['GET'])
+def product(request):
+    p= WhatsUsers.objects.all()
+    print(p[0].image.path)
+    data=ProductSerializer(p,many=True).data
+    return Response({'data':data})
