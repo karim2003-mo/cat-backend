@@ -27,7 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['https://separate-marie-jeanne-karim2003-a5de9308.koyeb.app','*']
 
-
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://separate-marie-jeanne-karim2003-a5de9308.koyeb.app",
+]
 # Application definition
 
 INSTALLED_APPS = [
