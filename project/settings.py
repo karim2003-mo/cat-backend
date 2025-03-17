@@ -25,13 +25,15 @@ SECRET_KEY = 'django-insecure-khv7-+*mvs44&nl7yfa3#kbb+72_p7v7hg^b5dv+!fi=#(jaby
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://separate-marie-jeanne-karim2003-a5de9308.koyeb.app','*']
+ALLOWED_HOSTS = ['https://then-gussi-karim2003-acc55ad1.koyeb.app','*']
 
 CORS_ALLOWED_ORIGINS = [
-    "https://separate-marie-jeanne-karim2003-a5de9308.koyeb.app",
+    "https://then-gussi-karim2003-acc55ad1.koyeb.app",
 ]
 # Application definition
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.then-gussi-karim2003-acc55ad1.koyeb.app"
+]
 INSTALLED_APPS = [
     'app',
     'corsheaders',
