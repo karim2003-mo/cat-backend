@@ -34,6 +34,18 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://*.then-gussi-karim2003-acc55ad1.koyeb.app"
 ]
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all domains
+
+# Optional: Allow all HTTP methods
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+
 INSTALLED_APPS = [
     'app',
     'corsheaders',
