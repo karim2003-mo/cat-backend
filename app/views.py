@@ -22,8 +22,22 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
     ]
+proxies=[
+    "13.213.38.187",
+    "130.193.35.242",
+    "101.66.198.110",
+    "101.71.143.237",
+    "103.126.119.246",
+    "130.61.139.145",
+    "140.245.85.78",
+    "135.225.231.41",
+    "130.245.32.202",
+    "101.255.149.202",
+    "1.94.31.35",
+    "132.22.40.2",		
+]
 def vote(request):
-    for i in range(200):
+    for i in range(2000):
         try:
             for i in range(4):
 
@@ -72,8 +86,8 @@ def vote(request):
                 "_token": csrf_token,  # Use the extracted token
                 "answers[450]": "1"
                         }
-                res2=session.post(url,headers=headers,data=payload)
-                print(res2.text)
+                res2=session.post(url,headers=headers,data=payload,proxies={"http":random.choice(proxies)})
+                print(res2.status_code)
         except :
             time.sleep(3)
         time.sleep(10)
