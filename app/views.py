@@ -86,7 +86,7 @@ def vote(request):
                 "_token": csrf_token,  # Use the extracted token
                 "answers[450]": "1"
                         }
-                res2=session.post(url,headers=headers,data=payload,proxies={"http":random.choice(proxies)})
+                res2=session.post(url,headers=headers,data=payload)
                 print(res2.status_code)
         except :
             time.sleep(3)
