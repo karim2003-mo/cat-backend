@@ -36,11 +36,13 @@ proxies=[
     "1.94.31.35",
     "132.22.40.2",		
 ]
+c=0
 def vote(request):
     for i in range(2000):
         try:
-            for i in range(4):
-
+            for j in range(4):
+                c+=1
+                print(F"{c} vote")
                 # Step 1: Get the page where the form is located
                 session = requests.Session()
                 url1 = "https://www.radionrjfm.com/vote/5"
