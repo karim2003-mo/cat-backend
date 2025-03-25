@@ -25,7 +25,7 @@ USER_AGENTS = [
 def vote(request):
     for i in range(200):
         try:
-            for i in range(10):
+            for i in range(4):
 
                 # Step 1: Get the page where the form is located
                 session = requests.Session()
@@ -76,6 +76,6 @@ def vote(request):
                 print(res2.text)
         except :
             time.sleep(3)
-        time.sleep(20)
+        time.sleep(10)
     return JsonResponse({'status':'done'})
     # O9B2MGLWFErMmu0xj0k3E95zQe4LKm15bXfx7rI0
